@@ -1,0 +1,491 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --clr-dark: #333; /* Dark color for text in light mode, background in dark mode */
+  --clr-light: #fff; /* Light color for background in light mode, text in dark mode */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 15px;
+  color: #333;
+  font-family: montserrat, sans-serif;
+  font-size: 2rem;
+  font-display: swap;
+  line-height: 1.5em;
+}
+
+/* dark mode */
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  margin-top: 25px;
+}
+
+.dark-mode {
+  color: var(--clr-light);
+  background-color: var(--clr-dark);
+}
+
+.toggle-container {
+  cursor: pointer;
+}
+
+.sun-icon,
+.moon-icon {
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.3s;
+}
+
+.moon-icon {
+  display: none;
+}
+
+.dark-mode .sun-icon {
+  display: none;
+}
+
+.dark-mode .moon-icon {
+  display: inline-block;
+}
+
+body.light-mode .code-diff__heading {
+  color: black; /* Черный текст в светлом режиме */
+}
+
+body.dark-mode .code-diff__heading {
+  color: white; /* Белый текст в темном режиме */
+}
+
+body.light-mode .texttitle {
+  color: black; /* Черный текст в светлом режиме */
+}
+
+body.dark-mode .texttitle {
+  color: rgb(0, 0, 0); /* Белый текст в темном режиме */
+}
+
+body.light-mode .asterisk p {
+  color: black; /* Черный текст в светлом режиме */
+}
+
+body.dark-mode .asterisk p {
+  color: rgb(255, 250, 250); /* Белый текст в темном режиме */
+}
+
+body.light-mode .yelow {
+  color: black; /* Черный текст в светлом режиме */
+}
+
+body.dark-mode .yelow {
+  color: rgb(0, 0, 0); /* Белый текст в темном режиме */
+}
+
+body.light-mode .red {
+  color: black; /* Черный текст в светлом режиме */
+}
+
+body.dark-mode .red {
+  color: rgb(0, 0, 0); /* Белый текст в темном режиме */
+}
+
+body.light-mode .empty {
+  background-color: black; /* Черный текст в светлом режиме */
+}
+
+body.dark-mode .empty {
+  background-color: #333333; /* Белый текст в темном режиме */
+}
+
+body.dark-mode .insert {
+  color: rgb(255, 255, 255); /* Белый текст в темном режиме */
+  background-color: #333333;
+}
+
+body.light-mode .insert {
+  color: rgb(0, 0, 0); /* Черный текст в светлом режиме */
+  background-color: #ffffff;
+}
+
+/* dark mode */
+
+.asterisk p {
+  color: black;
+  font-size: 14px;
+}
+
+.yelow {
+  background-color: #ffdd88;
+}
+
+.red {
+  background-color: #ee9999;
+}
+
+.code-diff {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 1.8rem;
+  }
+}
+
+.documentation-search {
+  padding: 45px 0;
+  text-align: center;
+}
+
+.wide-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+pre {
+  max-width: 100%;
+  margin: 1rem 0;
+  padding: 5px 0 5px 15px;
+  overflow-x: auto;
+  font-size: 2.1rem;
+  line-height: 1.35;
+}
+code {
+  padding: 0 2px;
+  font-size: 2.4rem;
+}
+pre,
+code {
+  font-family: monospace;
+}
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  margin-bottom: 1em;
+  color: #000;
+  font-weight: 800;
+  line-height: 1.5em;
+}
+h1 {
+  position: relative;
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+  font-size: 4.5rem;
+}
+h1:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #ff4500;
+}
+@media (max-width: 414px) {
+  h1 {
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    font-size: 3.5rem;
+  }
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 2rem;
+}
+p,
+ul {
+  color: DimGrey;
+}
+p + h1,
+p + h2,
+p + h3,
+pre + h1,
+pre + h2,
+pre + h3 {
+  margin-top: 1.3em;
+}
+.mobile-wrapper + p,
+p + p {
+  margin-top: 0;
+}
+hr {
+  margin: 30px 0;
+  border: none;
+  border-top: 1px solid silver;
+}
+.intro {
+  color: #000;
+  font-weight: 300;
+  font-size: 2.4rem;
+  line-height: 1.5em;
+}
+@media screen and (max-width: 414px) {
+  .intro {
+    font-size: 2rem;
+  }
+}
+.intro code {
+  font-size: 2.6rem;
+}
+@media screen and (max-width: 414px) {
+  .intro code {
+    font-size: 2.2rem;
+  }
+}
+a {
+  color: #4682b4;
+  text-decoration: underline;
+}
+a:hover {
+  color: #5dacee;
+  text-decoration: none;
+}
+.table {
+  width: 100%;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  background-color: initial;
+}
+.table th,
+.table td {
+  border-top: 1px solid #dee2e6;
+  padding: 0.75rem;
+  vertical-align: top;
+  text-align: left;
+}
+.table thead th {
+  border-bottom: 2px solid #dee2e6;
+  vertical-align: bottom;
+}
+.table tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+.table caption {
+  margin-bottom: 15px;
+  text-align: left;
+}
+.table code {
+  font-size: 2.1rem;
+}
+.mobile-wrapper {
+  width: 100%;
+  overflow: auto;
+}
+.breadcrumbs {
+  margin: 0 0 30px;
+  padding: 0;
+  font-size: 15px;
+}
+@media (max-width: 600px) {
+  .breadcrumbs {
+    margin: 0 -20px 20px;
+    padding: 0 20px 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+.breadcrumbs__item {
+  display: inline-block;
+  list-style-type: none;
+}
+.breadcrumbs__item:nth-child(n + 2)::before {
+  content: "/";
+  display: inline-block;
+  margin: 0 5px;
+  color: DimGrey;
+}
+.breadcrumbs__link {
+  text-decoration: none;
+}
+.breadcrumbs__item:last-child .breadcrumbs__link {
+  color: DimGrey;
+}
+.message__identical {
+  margin-bottom: 20px;
+  border-color: #ffeeba;
+  border-radius: 7px;
+  padding: 10px 20px;
+  color: #856404;
+  font-size: 15px;
+  background-color: #fff3cd;
+}
+.code-diff__heading {
+  margin-bottom: 10px;
+  font-family: montserrat, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+.code-diff__inputs-container {
+  display: flex;
+  margin-top: 100px;
+}
+.code-diff__input {
+  min-width: 800px;
+}
+.code-diff__input:nth-child(1) {
+  padding-right: 10px;
+}
+.code-diff__input:nth-child(2) {
+  padding-left: 10px;
+}
+@media (max-width: 900px) {
+  .code-diff__input {
+    width: 100%;
+  }
+  .code-diff__input:nth-child(1),
+  .code-diff__input:nth-child(2) {
+    padding: 0;
+  }
+  .code-diff__input:nth-child(1) {
+    margin-bottom: 20px;
+  }
+}
+.code-diff__button-container {
+  padding: 30px 0;
+  text-align: center;
+}
+.code-diff__button-compare {
+  border: none;
+  border-radius: 30px;
+  padding: 15px 40px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #3e8124;
+  transition: all 0.2s ease-in-out;
+}
+.code-diff__button-compare:focus {
+  outline: none;
+}
+.code-diff__button-compare:hover {
+  box-shadow: 0 5px 15px rgba(145, 92, 182, 0.4);
+  color: #fff;
+  cursor: pointer;
+}
+.code-diff-output {
+  margin-bottom: 20px;
+  margin-inline: 100px;
+}
+@media (max-width: 900px) {
+  .code-diff-output {
+    max-width: 100%;
+    overflow: auto;
+  }
+}
+#baseText,
+#newText {
+  border: 1px solid #ddd;
+  padding: 20px;
+  font-family: Menlo, Consolas, monospace;
+  font-size: 14px;
+  line-height: 21px;
+}
+table.diff {
+  width: 100%;
+  min-width: 800px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  line-height: 1.55em;
+  word-break: break-all;
+  table-layout: fixed;
+  border-collapse: collapse;
+  white-space: pre-wrap;
+}
+.diff__col-1,
+.diff__col-3 {
+  width: 45px;
+}
+table.diff tbody {
+  font-family: Menlo, Consolas, monospace;
+}
+table.diff tbody th {
+  width: 1%;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-bottom: none;
+  padding: 0 5px;
+  vertical-align: middle;
+  vertical-align: top;
+  color: #b2b2b2;
+  font-family: montserrat, sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  text-align: right;
+  white-space: nowrap;
+}
+table.diff thead {
+  border-bottom: 1px solid #ddd;
+  font-family: Verdana;
+  background: #f7f7f7;
+}
+table.diff thead th.texttitle {
+  padding: 10px 0;
+  text-align: left;
+}
+table.diff tbody td {
+  padding-right: 5px;
+  padding-left: 10px;
+  vertical-align: middle;
+  vertical-align: top;
+}
+
+table.diff .replace {
+  color: black;
+  background-color: #fd8;
+}
+table.diff .delete {
+  color: black;
+  background-color: #e99;
+}
+table.diff .skip {
+  border: 1px solid #aaa;
+  border-right: 1px solid #bbc;
+  background-color: #efefef;
+}
+
+table.diff th.author {
+  border-top: 1px solid #ddd;
+  color: #bbb;
+  text-align: right;
+  background: #f7f7f7;
+}
+table.diff th.author a {
+  color: #bbb;
+}
+.textInput {
+  display: block;
+  float: left;
+  width: 49%;
+}
+textarea {
+  width: 100%;
+  height: 300px;
+}
+label:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.spacer {
+  margin-left: 10px;
+}
+#diffoutput {
+  width: 76%;
+  margin-bottom: 100px;
+}
